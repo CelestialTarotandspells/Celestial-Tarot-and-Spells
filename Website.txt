@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celestial Tarot and Spells by Skye</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #008080;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #008080;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        footer {
+            background-color: #008080;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .review-form {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .review-form h3 {
+            margin-top: 0;
+        }
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+        .review-form button {
+            background-color: #008080;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .reviews-list {
+            margin-top: 20px;
+        }
+        .review {
+            background-color: #111;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .review p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Celestial Tarot and Spells</h1>
+        <p>By Skye</p>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="content" id="about">
+        <h2>About Me</h2>
+        <p>Hi, I’m Skye! My business, Celestial Tarot and Spells, allows me to connect with people and offer spellwork to help in many areas of life, whether it be through dark or light magic. I am also a Reiki master and offer healing sessions. Please note for legal reasons that I am not liable for certain outcomes and that my services are offered as curios only. No items are physically shipped unless specifically requested.</p>
+    </div>
+    <div class="content" id="services">
+        <h2>Services</h2>
+        <h3>Spell Work</h3>
+        <p>I offer customized spellwork tailored to your needs. Whether you seek love, prosperity, protection, or other forms of assistance, I can create a spell to help guide you.</p>
+        <h3>Reiki Sessions</h3>
+        <p>As a Reiki master, I provide remote healing sessions to help balance your energy and promote well-being. Sessions are designed to support your physical, emotional, and spiritual health.</p>
+    </div>
+    <div class="content" id="reviews">
+        <h2>Reviews</h2>
+        <div class="review-form">
+            <h3>Leave a Review</h3>
+            <form id="reviewForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <textarea name="review" rows="4" placeholder="Your Review" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="reviews-list" id="reviewsList">
+            <!-- Reviews will be displayed here -->
+        </div>
+    </div>
+    <div class="content" id="contact">
+        <h2>Contact</h2>
+        <p>Interested in my services? Reach out to me at <a href="mailto:skye@celestialtarotandspells.com">skye@celestialtarotandspells.com</a> to book a session or for more information.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Celestial Tarot and Spells. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = event.target.name.value;
+            const review = event.target.review.value;
+
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            reviewElement.innerHTML = `
+                <p><strong>${name}</strong></p>
+                <p>${review}</p>
+            `;
+
+            document.getElementById('reviewsList').appendChild(reviewElement);
+
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>
